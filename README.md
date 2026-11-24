@@ -45,8 +45,8 @@ npx skills@latest add mattpocock/skills -g -a antigravity-cli   # 給 agy
 # Orca 的 skill（orchestration、orca-cli），會裝給這台電腦偵測到的每個 agent
 orca skills install --skill orchestration --skill orca-cli
 
-# 這個 repo 的 orca-implement（私人 repo：要先被加成協作者，並用 gh 登入 GitHub）
-GITHUB_TOKEN=$(gh auth token) npx skills@latest add qaz26688442/orca-implement -g -a claude-code -a antigravity-cli
+# 這個 repo 的 orca-implement
+npx skills@latest add qaz26688442/orca-implement -g -a claude-code -a antigravity-cli
 ```
 
 - Claude Code 也可以改用 plugin 裝 Matt Pocock 的 skill：`claude plugin install mattpocock-skills@claude-plugins-official`。**plugin 和 `npx skills` 只選一種**，兩種都裝會出現兩份一樣的 skill（例如 `tdd` 和 `mattpocock-skills:tdd`）。
@@ -258,6 +258,4 @@ agy 的 model 清單裡也有 Claude（`claude-sonnet-5-5-medium`、`claude-opus
 
 ## 6. 改這個 skill
 
-改 `skills/orca-implement/` 底下的檔案，commit、push 到這個 repo。其他人重跑第 1-2 節的安裝指令（同樣要帶 `GITHUB_TOKEN=$(gh auth token)`）就會更新。
-
-沒帶 `GITHUB_TOKEN` 時，`npx skills` 會出現 `SKILLS_GIT_AUTH_FAILED`。
+改 `skills/orca-implement/` 底下的檔案，commit、push 到這個 repo。其他人重跑第 1-2 節的安裝指令就會更新。
