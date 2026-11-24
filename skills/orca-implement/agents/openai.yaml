@@ -1,0 +1,5 @@
+interface:
+  display_name: "Orca Implement"
+  short_description: "Run spec tickets through supervised Orca children"
+policy:
+  allow_implicit_invocation: false
